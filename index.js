@@ -106,7 +106,7 @@ values: function(object){
   }
   return values;
 },
-flatten: function(collection,){
+flatten: function(array, shallow, newArray){
   
 }
     functions: function() {
