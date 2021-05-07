@@ -117,7 +117,23 @@ flatten: function(array, shallow, newArr = []) {
         return newArr
       }
     },
-    
+     uniq: function(array, isSorted, callback = (a) => a) {
+      const uniqueArray = [];
+
+      for (const element of array) {
+        let counter = 0;
+        for (const uniqElement of uniqueArray) {
+          if (callback(uniqElement) === callback(element)) {
+            counter++;
+          }
+        }
+        if (counter < 1) {
+          uniqueArray.push(element);
+        }
+      }
+
+      return uniqueArray;
+    },
     functions: function() {
 
     },
