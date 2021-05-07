@@ -106,6 +106,9 @@ values: function(object){
   }
   return values;
 },
+flatten: function(collection,){
+  
+}
     functions: function() {
 
     },
