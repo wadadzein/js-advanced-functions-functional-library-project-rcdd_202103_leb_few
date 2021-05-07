@@ -117,6 +117,7 @@ flatten: function(array, shallow, newArr = []) {
         return newArr
       }
     },
+    
     functions: function() {
 
     },
