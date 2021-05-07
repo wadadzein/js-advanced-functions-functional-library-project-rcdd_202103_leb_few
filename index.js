@@ -86,11 +86,7 @@ return newArray;
         return callback(a) - callback(b);
       });
     },
- flatten:function(array){
-   let newArray=array.split('');
-   
-  return newArray;
- },
+
  
  keys:function(object){
    let array=[];
@@ -106,9 +102,21 @@ values: function(object){
   }
   return values;
 },
-flatten: function(array, shallow, newArray){
-  
-}
+flatten: function(array, shallow, newArr = []) {
+      if (shallow) {
+        return newArr.concat.apply([], array)
+      } else {
+        for (const element of array) {
+          if (Array.isArray(element)) {
+            fi.flatten(element, false, newArr)
+          }
+          else {
+            newArr.push(element)
+          }
+        }
+        return newArr
+      }
+    },
     functions: function() {
 
     },
