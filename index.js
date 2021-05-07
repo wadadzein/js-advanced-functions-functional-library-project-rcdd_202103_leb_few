@@ -135,7 +135,13 @@ flatten: function(array, shallow, newArr = []) {
       return uniqueArray;
     },
     functions: function() {
-
+  const fnArray = [];
+      for (const key in obj) {
+        if (typeof obj[key] === 'function') {
+          fnArray.push(key)
+        }
+      }
+      return fnArray
     },
 
 
